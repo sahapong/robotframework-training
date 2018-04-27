@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180427 14:03:40.182" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\robot\tests\rd_password.robot" id="s1" name="Rd Password">
+<test id="s1-t1" name="E044">
+<kw name="Open" library="FirstPage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=gc</arg>
+</arguments>
+<msg timestamp="20180427 14:03:40.836" level="INFO">Opening browser 'gc' to base url 'https://epit.rd.go.th/EFILING/RegController?PRGID=R008T'.</msg>
+<status status="PASS" endtime="20180427 14:03:47.519" starttime="20180427 14:03:40.836"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180427 14:03:48.693" starttime="20180427 14:03:47.519"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:48.693" starttime="20180427 14:03:40.836"></status>
+</kw>
+<kw name="Verify the content" library="FirstPage">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>xpath://*[@id="R008T"]/table/tbody/tr/td[2]/span</arg>
+<arg>เลือกประเภทการลงทะเบียน(เพื่อตั้งรหัสผ่านใหม่)</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:48.736" starttime="20180427 14:03:48.694"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://*[@id="form1"]/table[1]/tbody/tr[1]/td[1]/img</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:48.753" starttime="20180427 14:03:48.736"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:48.753" starttime="20180427 14:03:48.693"></status>
+</kw>
+<kw name="Click menu person-&gt; Thai" library="FirstPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>name:link_RegType1</arg>
+</arguments>
+<msg timestamp="20180427 14:03:48.754" level="INFO">Clicking element 'name:link_RegType1'.</msg>
+<status status="PASS" endtime="20180427 14:03:50.481" starttime="20180427 14:03:48.754"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:50.481" starttime="20180427 14:03:48.754"></status>
+</kw>
+<kw name="Verify the content" library="SecondPage">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="tb10"]/table[1]/tbody/tr/td[2]</arg>
+</arguments>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20180427 14:03:50.545" level="INFO">${message} =   บริการตั้งรหัสผ่านใหม่ กรณีจำคำถามคำตอบได้  (บุคคลธรรมดา สัญชาติไทย)</msg>
+<status status="PASS" endtime="20180427 14:03:50.545" starttime="20180427 14:03:50.483"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${message}</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:50.547" starttime="20180427 14:03:50.545"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${message}</arg>
+<arg>กรณีจำคำถามคำตอบได้</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:50.547" starttime="20180427 14:03:50.547"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>btn_changePassword</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:50.566" starttime="20180427 14:03:50.548"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:50.566" starttime="20180427 14:03:50.482"></status>
+</kw>
+<kw name="Fill personal information" library="SecondPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fld_nid</arg>
+<arg>1101402053361</arg>
+</arguments>
+<msg timestamp="20180427 14:03:50.568" level="INFO">Typing text '1101402053361' into text field 'id:fld_nid'.</msg>
+<status status="PASS" endtime="20180427 14:03:50.813" starttime="20180427 14:03:50.568"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fld_firstName</arg>
+<arg>สหพงศ์</arg>
+</arguments>
+<msg timestamp="20180427 14:03:50.814" level="INFO">Typing text 'สหพงศ์' into text field 'id:fld_firstName'.</msg>
+<status status="PASS" endtime="20180427 14:03:50.908" starttime="20180427 14:03:50.813"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fld_lastName</arg>
+<arg>ปฏิวงศ์ไพศาล</arg>
+</arguments>
+<msg timestamp="20180427 14:03:50.909" level="INFO">Typing text 'ปฏิวงศ์ไพศาล' into text field 'id:fld_lastName'.</msg>
+<status status="PASS" endtime="20180427 14:03:51.034" starttime="20180427 14:03:50.908"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fld_birth_date</arg>
+<arg>06022538</arg>
+</arguments>
+<msg timestamp="20180427 14:03:51.035" level="INFO">Typing text '06022538' into text field 'id:fld_birth_date'.</msg>
+<status status="PASS" endtime="20180427 14:03:51.171" starttime="20180427 14:03:51.035"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:51.171" starttime="20180427 14:03:50.567"></status>
+</kw>
+<kw name="Answer the question" library="SecondPage">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:fld_question</arg>
+<arg>8</arg>
+</arguments>
+<msg timestamp="20180427 14:03:51.172" level="INFO">Selecting options from selection list 'id:fld_question' by value 8.</msg>
+<status status="PASS" endtime="20180427 14:03:51.257" starttime="20180427 14:03:51.172"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fld_answer</arg>
+<arg>จำไม่ได้</arg>
+</arguments>
+<msg timestamp="20180427 14:03:51.258" level="INFO">Typing text 'จำไม่ได้' into text field 'id:fld_answer'.</msg>
+<status status="PASS" endtime="20180427 14:03:51.350" starttime="20180427 14:03:51.257"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:51.350" starttime="20180427 14:03:51.171"></status>
+</kw>
+<kw name="Submit the form" library="SecondPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id:bOK1</arg>
+</arguments>
+<msg timestamp="20180427 14:03:51.351" level="INFO">Clicking element 'id:bOK1'.</msg>
+<status status="PASS" endtime="20180427 14:03:51.418" starttime="20180427 14:03:51.351"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:51.418" starttime="20180427 14:03:51.351"></status>
+</kw>
+<kw name="Get failed alert box" library="SecondPage">
+<kw name="Handle Alert" library="SeleniumLibrary">
+<doc>Handles the current alert and returns its message.</doc>
+<assign>
+<var>${message}</var>
+</assign>
+<msg timestamp="20180427 14:03:51.927" level="INFO">${message} = ข้อความปฏิเสธ [E044] :  คำถาม คำตอบ ไม่ตรงกับข้อมูลในฐานข้อมูลกรมสรรพากร </msg>
+<status status="PASS" endtime="20180427 14:03:51.928" starttime="20180427 14:03:51.421"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${message}</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:51.929" starttime="20180427 14:03:51.928"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${message}</arg>
+<arg>E044</arg>
+</arguments>
+<status status="PASS" endtime="20180427 14:03:51.930" starttime="20180427 14:03:51.929"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:51.930" starttime="20180427 14:03:51.420"></status>
+</kw>
+<status status="PASS" endtime="20180427 14:03:51.931" critical="yes" starttime="20180427 14:03:40.836"></status>
+</test>
+<status status="PASS" endtime="20180427 14:03:51.933" starttime="20180427 14:03:40.182"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Rd Password" pass="1">Rd Password</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
