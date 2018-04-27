@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180427 16:17:16.696" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\robot\apibot\user.robot" id="s1" name="User">
+<test id="s1-t1" name="Check all user from API">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>api</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+</arguments>
+<msg timestamp="20180427 16:17:16.813" level="INFO">Creating Session using : alias=api, url=https://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180427 16:17:16.813" starttime="20180427 16:17:16.813"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>api</arg>
+<arg>/users</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20180427 16:17:17.231" level="INFO">Get Request using : alias=api, uri=/users, headers=None json=None</msg>
+<msg timestamp="20180427 16:17:17.231" level="INFO">C:\Python27\lib\site-packages\urllib3\connectionpool.py:858: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20180427 16:17:17.231" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20180427 16:17:17.231" starttime="20180427 16:17:16.814"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.json('username')}</arg>
+</arguments>
+<msg timestamp="20180427 16:17:17.231" level="FAIL">Resolving variable '${response.json('username')}' failed: TypeError: json() takes exactly 1 argument (2 given)</msg>
+<status status="FAIL" endtime="20180427 16:17:17.231" starttime="20180427 16:17:17.231"></status>
+</kw>
+<status status="FAIL" endtime="20180427 16:17:17.231" critical="yes" starttime="20180427 16:17:16.812">Resolving variable '${response.json('username')}' failed: TypeError: json() takes exactly 1 argument (2 given)</status>
+</test>
+<status status="FAIL" endtime="20180427 16:17:17.231" starttime="20180427 16:17:16.696"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="User" pass="0">User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

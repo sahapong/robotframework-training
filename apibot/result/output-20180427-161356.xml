@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180427 16:13:56.541" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\robot\apibot\user.robot" id="s1" name="User">
+<test id="s1-t1" name="Check all user from API">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>api</arg>
+<arg>https://jsonplaceholder.typicode.com</arg>
+</arguments>
+<msg timestamp="20180427 16:13:56.718" level="INFO">Creating Session using : alias=api, url=https://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20180427 16:13:56.718" starttime="20180427 16:13:56.718"></status>
+</kw>
+<kw name="Get Requests">
+<arguments>
+<arg>api</arg>
+<arg>/users</arg>
+</arguments>
+<assign>
+<var>${response}=</var>
+</assign>
+<msg timestamp="20180427 16:13:56.718" level="FAIL">No keyword with name 'Get Requests' found. Did you mean:
+    RequestsLibrary.Get Request</msg>
+<status status="FAIL" endtime="20180427 16:13:56.718" starttime="20180427 16:13:56.718"></status>
+</kw>
+<status status="FAIL" endtime="20180427 16:13:56.718" critical="yes" starttime="20180427 16:13:56.702">No keyword with name 'Get Requests' found. Did you mean:
+    RequestsLibrary.Get Request</status>
+</test>
+<status status="FAIL" endtime="20180427 16:13:56.718" starttime="20180427 16:13:56.541"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="User" pass="0">User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
